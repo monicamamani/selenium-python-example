@@ -2,4 +2,4 @@
 browser: chrome
 
 #True/False
-headless: False
+headless: True
