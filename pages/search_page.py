@@ -1,6 +1,7 @@
 from selenium.webdriver.support import expected_conditions as EC
 from pages.base_page import BasePage
 from data.locators import SearchPageLocators
+import array as arr
 
 
 class SearchPage(BasePage):
@@ -21,3 +22,18 @@ class SearchPage(BasePage):
         self.driver.find_element(*self.locator.SEARCH_BUTTON).click()
         self.wait.until(EC.presence_of_element_located(self.locator.RESULTS))
         self.driver.save_screenshot("results/results.png")
+
+    def check_cards(self, arr_elements):
+        # Evaluating entire DOM
+        elements = self.driver.find_elements(*self.locator.TITLE_ELEMENTS)
+        print(len(elements))
+        for e in elements:
+            print(e.text)
+
+        # self.driver.quit()
+
+        #Evaluating a subset of the DOM
+        els = self.driver.find_element(*self.locator.FIRST_CARD_ELEMENT)
+        subtitle = els.find_element(*self.locator.SUBTITLE_CARD_ELEMENT)
+        print(subtitle.text)
+
