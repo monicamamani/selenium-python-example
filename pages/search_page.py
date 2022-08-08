@@ -37,3 +37,8 @@ class SearchPage(BasePage):
         subtitle = els.find_element(*self.locator.SUBTITLE_CARD_ELEMENT)
         print(subtitle.text)
 
+    def test2(self):
+        # Get attribute of current active element
+        attr = self.driver.switch_to.active_element.get_attribute("title")
+        print(attr)
+

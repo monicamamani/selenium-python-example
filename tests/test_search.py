@@ -19,5 +19,9 @@ class TestSearch(BaseTest):
     def test_search(self, load_pages):
         self.page.make_a_search("Selenium")
 
+    @pytest.mark.skip(reason="no way of currently testing this2")
     def test_cards(self, load_pages):
         self.page.check_cards("Selenium")
+
+    def test_2(self, load_pages):
+        self.page.test2()
