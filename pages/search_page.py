@@ -7,7 +7,7 @@ import array as arr
 class SearchPage(BasePage):
 
     def __init__(self, driver, wait):
-        self.url = "https://duckduckgo.com/"
+        self.url = "https://google.com/"
         self.locator = SearchPageLocators
         super().__init__(driver, wait)
 
