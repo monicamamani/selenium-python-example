@@ -1,5 +1,6 @@
 Feature: User visualization of GoogleBrowser
 
+  @smoke
   Scenario: Opening the browser
     Given we have behave installed2
     When we implement a test2
