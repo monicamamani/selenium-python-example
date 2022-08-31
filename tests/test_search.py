@@ -24,4 +24,4 @@ class TestSearch(BaseTest):
         self.page.check_cards("Selenium")
 
     def test_2(self, load_pages):
-        self.page.test2()
+        self.page.default_img()

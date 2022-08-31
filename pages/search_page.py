@@ -1,13 +1,14 @@
 from selenium.webdriver.support import expected_conditions as EC
 from pages.base_page import BasePage
 from data.locators import SearchPageLocators
+from selenium.webdriver.common.keys import Keys
 import array as arr
 
 
 class SearchPage(BasePage):
 
     def __init__(self, driver, wait):
-        self.url = "https://google.com/"
+        self.url = "https://google.com"
         self.locator = SearchPageLocators
         super().__init__(driver, wait)
 
@@ -37,8 +38,20 @@ class SearchPage(BasePage):
         subtitle = els.find_element(*self.locator.SUBTITLE_CARD_ELEMENT)
         print(subtitle.text)
 
-    def test2(self):
+    def default_img(self):
         # Get attribute of current active element
-        attr = self.driver.switch_to.active_element.get_attribute("title")
-        print(attr)
+        status = self.driver.find_element_by_xpath("/html/body/div[1]/div[2]/div/img").is_displayed()
+        return status
+
+    def locate_input_and_enter_value(self, xpath_exp, value):
+        # self.driver.find_element_by_xpath("/html/body/div[1]/div[3]/form/div[1]/div[1]/div[1]/div/div[2]/input").send_keys(user)
+        element = self.driver.find_element_by_xpath(xpath_exp)
+        element.send_keys(value)
+        element.submit()
+
+    def click_enter(self, element):
+        element.submit()
+
+
+
 

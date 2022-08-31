@@ -4,5 +4,5 @@ Feature: User visualization of GoogleBrowser
   Scenario: Opening the browser
     Given we have behave installed2
     When we implement a test2
-    Then behave will test it for us2!
+    Then Enter username "monica" and password "admin123"
     And all is ok2
